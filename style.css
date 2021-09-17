@@ -3,8 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  margin-top: 100px;
+}
 .pad {
   height: 20px;
   width: 40px;
   margin: 100px;
+}
+h1 p {
+  margin-top: 100px;
 }

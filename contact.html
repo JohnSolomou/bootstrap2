@@ -7,6 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link rel="stylesheet" href="style.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -32,6 +33,7 @@
         <li class="nav-item">
           <a
             href="index.html"
+            data-tab-name="m-pill"
             class="nav-link active"
             role="tab"
             data-toggle="tab"
@@ -40,19 +42,34 @@
         </li>
 
         <li class="nav-item">
-          <a href="about.html" class="nav-link" role="tab" data-toggle="tab"
+          <a
+            href="about.html"
+            data-tab-name="m-pill"
+            class="nav-link"
+            role="tab"
+            data-toggle="tab"
             >About Us</a
           >
         </li>
 
         <li class="nav-item">
-          <a href="contact.html" class="nav-link" role="tab" data-toggle="tab"
+          <a
+            href="contact.html"
+            data-tab-name="m-pill"
+            class="nav-link"
+            role="tab"
+            data-toggle="tab"
             >Contact Us</a
           >
         </li>
 
         <li class="nav-item">
-          <a href="blog.html" class="nav-link" role="tab" data-toggle="tab"
+          <a
+            href="blog.html"
+            data-tab-name="m-pill"
+            class="nav-link"
+            role="tab"
+            data-toggle="tab"
             >blog</a
           >
         </li>
@@ -72,6 +89,19 @@
       dolores voluptatum magni ducimus illum soluta reprehenderit adipisci sed
       quisquam esse. Molestias, distinctio.
     </p>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .querySelectorAll('[data-toggle="tab"]')
+          .forEach(function (item, index) {
+            item.addEventListener("click", function (e) {
+              e.preventDefault();
+              localStorage.selectedTabName = item.getAttribute("data-tab-name");
+              window.location.href = item.href;
+            });
+          });
+      };
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
